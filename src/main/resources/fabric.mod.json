@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "rebuildableworldmod",
+	"version": "${version}",
+	"name": "Rebuildable World",
+	"description": "Recreating the measurement every T time",
+	"authors": [
+		"GWS"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/rebuildableworldmod/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.rebuildable_world_mod.RebuildableWorld"
+		],
+		"client": [
+			"com.rebuildable_world_mod.RebuildableWorldClient"
+		],
+		"fabric-datagen": [
+			"com.rebuildable_world_mod.RebuildableWorldDataGenerator"
+		]
+	},
+	"mixins": [
+		"rebuildableworldmod.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.6",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
