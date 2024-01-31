@@ -1,0 +1,13 @@
+{
+    "type": "minecraft:crafting_shapless",
+    "category": "building",
+    "ingridients": [
+        {
+            "item": "rebuildableworldmod:portal_block_to_ab_dimensions_test"
+        }
+    ],
+    "result": {
+        "item": "minecraft:gold_nugget",
+        "count": 8
+    }
+}

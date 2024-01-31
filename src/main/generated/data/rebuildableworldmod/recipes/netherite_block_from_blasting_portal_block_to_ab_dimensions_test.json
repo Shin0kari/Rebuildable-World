@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "netherite_block",
+  "ingredient": {
+    "item": "rebuildableworldmod:portal_block_to_ab_dimensions_test"
+  },
+  "result": "minecraft:netherite_block"
+}

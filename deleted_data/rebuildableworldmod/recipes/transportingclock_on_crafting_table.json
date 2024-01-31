@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "category": "misc",
+    "pattern": [
+        "GGG",
+        "GDG",
+        "GGG"
+    ],
+    "key": {
+        "G": {
+            "item": "minecraft:gold_nugget"
+        },
+        "D": {
+            "item": "minecraft:ancient_debris"
+        }
+    },
+
+    "result": {
+        "item": "rebuildableworldmod:transportingclock",
+        "count": 1
+    }
+}

@@ -1,4 +1,14 @@
 {
     "item.rebuildableworldmod.recreationclock": "Recreation Clock",
+    "item.rebuildableworldmod.transportingclock": "Clock of Dimension Travel",
+    "tooltip.rebuildable_world_mod.transporting_clock.tooltip": "It feels like space is leaking through this gold watch",
+
+    "block.rebuildableworldmod.portal_block_to_ab_dimensions_test": "(Test)Portal Block of Dimensions AB",
+
+    "block.rebuildableworldmod.useless_ore": "(Test)Useless Ore",
+    "block.rebuildableworldmod.useless_deepslate_ore": "(Test)Useless Deepslate Ore",
+    "block.rebuildableworldmod.useless_nether_ore": "(Test)Useless Nether Ore",
+    "block.rebuildableworldmod.useless_end_ore": "(Test)Useless End Ore",
+
     "itemgroup.rebuildableworldmod": "Rebuildable World Group"
 }

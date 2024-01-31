@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "minecraft:ancient_debris"
+    },
+    "G": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "pattern": [
+    "GAG",
+    "AGA",
+    "GAG"
+  ],
+  "result": {
+    "item": "rebuildableworldmod:portal_block_to_ab_dimensions_test"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "": {
+            "model": "rebuildableworldmod:block/useless_deepslate_ore"
+        }
+    }
+}

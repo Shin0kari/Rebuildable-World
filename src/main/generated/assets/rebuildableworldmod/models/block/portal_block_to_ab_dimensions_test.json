@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "rebuildableworldmod:block/portal_block_to_ab_dimensions_test"
+  }
+}

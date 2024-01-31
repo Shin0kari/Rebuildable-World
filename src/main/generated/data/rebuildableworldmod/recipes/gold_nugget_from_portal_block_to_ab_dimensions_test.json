@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "gold_nuggets_from_pbtabdt",
+  "ingredients": [
+    {
+      "item": "rebuildableworldmod:portal_block_to_ab_dimensions_test"
+    }
+  ],
+  "result": {
+    "count": 8,
+    "item": "minecraft:gold_nugget"
+  }
+}
