@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import com.rebuildable_world_mod.block.ModBlocks;
 import com.rebuildable_world_mod.item.ModItemGroups;
 import com.rebuildable_world_mod.item.ModItems;
+import com.rebuildable_world_mod.sound.ModSounds;
 
 public class RebuildableWorld implements ModInitializer {
 	public static final String MOD_ID = "rebuildableworldmod";
@@ -18,5 +19,7 @@ public class RebuildableWorld implements ModInitializer {
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
+
+		ModSounds.registerSounds();
 	}
 }

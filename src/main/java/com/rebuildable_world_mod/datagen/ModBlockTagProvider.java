@@ -1,4 +1,4 @@
-package com.rebuildable_world_mod.block.datagen;
+package com.rebuildable_world_mod.datagen;
 
 import java.util.concurrent.CompletableFuture;
 

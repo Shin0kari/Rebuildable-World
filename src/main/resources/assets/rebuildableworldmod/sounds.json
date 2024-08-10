@@ -1,0 +1,8 @@
+{
+    "villager_talk_mod": {
+        "subtitle": "sounds.rebuildableworldmod.villager_talk_mod",
+        "sounds": [
+            "rebuildableworldmod:villager_talk_mod"
+        ]
+    }
+}

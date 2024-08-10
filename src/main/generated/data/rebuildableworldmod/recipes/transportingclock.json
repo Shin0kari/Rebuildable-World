@@ -5,14 +5,20 @@
     "A": {
       "item": "minecraft:ancient_debris"
     },
+    "C": {
+      "item": "minecraft:crying_obsidian"
+    },
     "G": {
       "item": "minecraft:gold_nugget"
+    },
+    "P": {
+      "item": "minecraft:ender_pearl"
     }
   },
   "pattern": [
-    "GGG",
-    "GAG",
-    "GGG"
+    "GCG",
+    "PAP",
+    "GCG"
   ],
   "result": {
     "item": "rebuildableworldmod:transportingclock"

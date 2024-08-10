@@ -13,6 +13,30 @@
       },
       "trigger": "minecraft:inventory_changed"
     },
+    "has_crying_obsidian": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:crying_obsidian"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_ender_pearl": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:ender_pearl"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
     "has_gold_nugget": {
       "conditions": {
         "items": [
@@ -36,6 +60,8 @@
     [
       "has_gold_nugget",
       "has_ancient_debris",
+      "has_crying_obsidian",
+      "has_ender_pearl",
       "has_the_recipe"
     ]
   ],

@@ -1,10 +1,10 @@
 package com.rebuildable_world_mod;
 
-import com.rebuildable_world_mod.block.datagen.ModBlockTagProvider;
-import com.rebuildable_world_mod.block.datagen.ModItemTagProvider;
-import com.rebuildable_world_mod.block.datagen.ModLootTableTagProvider;
-import com.rebuildable_world_mod.block.datagen.ModModelProvider;
-import com.rebuildable_world_mod.block.datagen.ModRecipeProvider;
+import com.rebuildable_world_mod.datagen.ModBlockTagProvider;
+import com.rebuildable_world_mod.datagen.ModItemTagProvider;
+import com.rebuildable_world_mod.datagen.ModLootTableTagProvider;
+import com.rebuildable_world_mod.datagen.ModModelProvider;
+import com.rebuildable_world_mod.datagen.ModRecipeProvider;
 
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;

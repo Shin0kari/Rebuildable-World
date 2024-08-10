@@ -1,7 +1,7 @@
-package com.rebuildable_world_mod.block.datagen;
+package com.rebuildable_world_mod.datagen;
 
 import com.rebuildable_world_mod.block.ModBlocks;
-import com.rebuildable_world_mod.item.ModItems;
+// import com.rebuildable_world_mod.item.ModItems;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
@@ -34,6 +34,7 @@ public class ModLootTableTagProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.USELESS_END_ORE, oreDrops(ModBlocks.USELESS_END_ORE, Items.END_ROD));
     }
     
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     public LootTable.Builder modOreDrop(Block drop, Item item) {
         return BlockLootTableGenerator.dropsWithSilkTouch(drop, (LootPoolEntry.Builder)this.applyExplosionDecay(drop,
                 ((LeafEntry.Builder)
@@ -41,6 +42,6 @@ public class ModLootTableTagProvider extends FabricBlockLootTableProvider {
                         .apply(SetCountLootFunction
                             .builder(UniformLootNumberProvider
                                 .create(2.0f, 5.0f))))
-                    .apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))));
+                        .apply(ApplyBonusLootFunction.oreDrops(Enchantments.FORTUNE))));
     }
 }

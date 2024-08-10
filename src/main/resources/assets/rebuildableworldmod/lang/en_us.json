@@ -10,5 +10,7 @@
     "block.rebuildableworldmod.useless_nether_ore": "(Test)Useless Nether Ore",
     "block.rebuildableworldmod.useless_end_ore": "(Test)Useless End Ore",
 
-    "itemgroup.rebuildableworldmod": "Rebuildable World Group"
+    "itemgroup.rebuildableworldmod": "Rebuildable World Group",
+
+    "sounds.rebuildableworldmod.villager_talk_mod": "villager_talk_mod"
 }
