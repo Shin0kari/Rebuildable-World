@@ -9,6 +9,7 @@ import com.rebuildable_world_mod.block.ModBlocks;
 import com.rebuildable_world_mod.item.ModItemGroups;
 import com.rebuildable_world_mod.item.ModItems;
 import com.rebuildable_world_mod.sound.ModSounds;
+import com.rebuildable_world_mod.world.gen.ModWorldGeneration;
 
 public class RebuildableWorld implements ModInitializer {
 	public static final String MOD_ID = "rebuildableworldmod";
@@ -21,5 +22,7 @@ public class RebuildableWorld implements ModInitializer {
 		ModBlocks.registerModBlocks();
 
 		ModSounds.registerSounds();
+
+		ModWorldGeneration.generateModWorldGen();
 	}
 }

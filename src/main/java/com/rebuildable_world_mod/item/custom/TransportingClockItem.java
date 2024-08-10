@@ -118,27 +118,27 @@ public class TransportingClockItem extends Item {
         super.appendTooltip(stack, world, tooltip, context);
     }
 
-    // Анимация должна зацикливаться на последних тиках арбалета
-    @Override
-    public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
-        if (!world.isClient) {
-            int i = EnchantmentHelper.getLevel(Enchantments.QUICK_CHARGE, stack);
-            float f = (float) (stack.getMaxUseTime() - remainingUseTicks) / (float) getChargeTime(stack);
+    // Для проигрывания звуков при зажатии часов
+    // @Override
+    // public void usageTick(World world, LivingEntity user, ItemStack stack, int remainingUseTicks) {
+    //     if (!world.isClient) {
+    //         int i = EnchantmentHelper.getLevel(Enchantments.QUICK_CHARGE, stack);
+    //         float f = (float) (stack.getMaxUseTime() - remainingUseTicks) / (float) getChargeTime(stack);
             
-            // if (f < 0.2f) {
-            //     this.charged = false;
-            //     this.loaded = false;
-            // }
-            // if (f >= 0.2f && !this.charged) {
-            //     this.charged = true;
-            //     world.playSound(null, user.getX(), user.getY(), user.getZ(), soundEvent, SoundCategory.PLAYERS, 0.5f, 1.0f);
-            // }
-            // if (f >= 0.5f && soundEvent2 != null && !this.loaded) {
-            //     this.loaded = true;
-            //     world.playSound(null, user.getX(), user.getY(), user.getZ(), soundEvent2, SoundCategory.PLAYERS, 0.5f, 1.0f);
-            // }
-        }
-    }
+    //         // if (f < 0.2f) {
+    //         //     this.charged = false;
+    //         //     this.loaded = false;
+    //         // }
+    //         // if (f >= 0.2f && !this.charged) {
+    //         //     this.charged = true;
+    //         //     world.playSound(null, user.getX(), user.getY(), user.getZ(), soundEvent, SoundCategory.PLAYERS, 0.5f, 1.0f);
+    //         // }
+    //         // if (f >= 0.5f && soundEvent2 != null && !this.loaded) {
+    //         //     this.loaded = true;
+    //         //     world.playSound(null, user.getX(), user.getY(), user.getZ(), soundEvent2, SoundCategory.PLAYERS, 0.5f, 1.0f);
+    //         // }
+    //     }
+    // }
 
     // private SoundEvent getQuickChargeSound(int level) {
     //     switch (level) {
