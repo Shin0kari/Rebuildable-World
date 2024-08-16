@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "rebuildableworldmod:block/clock_charge_station"
+    }
+  }
+}

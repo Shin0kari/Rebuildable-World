@@ -1,6 +1,6 @@
 package com.rebuildable_world_mod.datagen;
 
-import java.util.function.Consumer;
+// import java.util.function.Consumer;
 import java.util.List;
 
 import com.rebuildable_world_mod.block.ModBlocks;
@@ -8,7 +8,8 @@ import com.rebuildable_world_mod.item.ModItems;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
-import net.minecraft.data.server.recipe.RecipeJsonProvider;
+import net.minecraft.data.server.recipe.RecipeExporter;
+// import net.minecraft.data.server.recipe.RecipeJsonProvider;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
 import net.minecraft.item.Items;
 // import net.minecraft.recipe.ShapelessRecipe;
@@ -22,7 +23,7 @@ public class ModRecipeProvider extends FabricRecipeProvider{
     }
 
     @Override
-    public void generate(Consumer<RecipeJsonProvider> exporter) {
+    public void generate(RecipeExporter exporter) {
         offerBlasting(exporter, List.of(ModBlocks.PORTAL_BLOCK_TO_AB_DIMENSIONS_TEST), RecipeCategory.MISC, Items.NETHERITE_BLOCK, 1.0f, 200, "netherite_block");
     
         ShapedRecipeJsonBuilder.create(RecipeCategory.MISC, ModItems.TRANSPORTINGCLOCK, 1)

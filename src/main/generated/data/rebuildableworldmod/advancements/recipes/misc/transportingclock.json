@@ -58,11 +58,11 @@
   },
   "requirements": [
     [
+      "has_the_recipe",
       "has_gold_nugget",
       "has_ancient_debris",
       "has_crying_obsidian",
-      "has_ender_pearl",
-      "has_the_recipe"
+      "has_ender_pearl"
     ]
   ],
   "rewards": {

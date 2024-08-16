@@ -25,6 +25,7 @@ public class ModItemGroups {
                 entries.add(ModBlocks.USELESS_DEEPSLATE_ORE);
                 entries.add(ModBlocks.USELESS_NETHER_ORE);
                 entries.add(ModBlocks.USELESS_END_ORE);
+                entries.add(ModBlocks.CLOCK_CHARGE_STATION);
                 // test add vanilla item
                 entries.add(Items.CLOCK);
             }).build());

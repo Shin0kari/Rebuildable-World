@@ -22,8 +22,8 @@
   },
   "requirements": [
     [
-      "has_portal_block_to_ab_dimensions_test",
-      "has_the_recipe"
+      "has_the_recipe",
+      "has_portal_block_to_ab_dimensions_test"
     ]
   ],
   "rewards": {

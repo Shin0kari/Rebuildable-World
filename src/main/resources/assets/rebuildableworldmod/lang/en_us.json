@@ -12,5 +12,8 @@
 
     "itemgroup.rebuildableworldmod": "Rebuildable World Group",
 
-    "sounds.rebuildableworldmod.villager_talk_mod": "villager_talk_mod"
+    "sounds.rebuildableworldmod.villager_talk_mod": "villager_talk_mod",
+
+    "block.rebuildableworldmod.clock_charge_station": "Clock charge Station",
+    "tooltip.rebuildable_world_mod.clock_charge_station.tooltip": "It seems that this station can infuse time into an object"
 }
