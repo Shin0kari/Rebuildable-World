@@ -1,4 +1,5 @@
-// 1.20.1	2024-08-10T19:24:08.4161825	Rebuildable World/Model Definitions
+// 1.20.2	2024-08-16T20:13:17.6208057	Rebuildable World/Model Definitions
+57da9e99ab69d7a9c30095136004487899d1e197 assets\rebuildableworldmod\models\item\clock_charge_station.json
 57174fedc709e9333713b72ff1f4f528f8dd13f8 assets\rebuildableworldmod\models\item\transportingclock.json
 48b83761f6729ee5c0de3a6ea6d8d157b8c8b35f assets\rebuildableworldmod\blockstates\useless_end_ore.json
 51ffe4e20821b3e0b379d35c61c00ee8a0443206 assets\rebuildableworldmod\models\item\useless_deepslate_ore.json
@@ -13,6 +14,7 @@ f4006ec2c6b70482c2717d622116001b3aa77073 assets\rebuildableworldmod\blockstates\
 51ebf6fdd66dda48489aa0f2952ec1b823fdd02d assets\rebuildableworldmod\models\block\useless_end_ore.json
 a53cce08d6b892f14c0ce42dc42c1cf1aa7f18cf assets\rebuildableworldmod\blockstates\useless_deepslate_ore.json
 e2f481baf9bb66b9e3303846568de3c7bfdc4c9e assets\rebuildableworldmod\blockstates\useless_ore.json
+eb86c19be79e7346b5c67c82fc97db7e9fdfa915 assets\rebuildableworldmod\blockstates\clock_charge_station.json
 e7373df7664e1d5772b7ec52928a2589c320d1d6 assets\rebuildableworldmod\models\block\portal_block_to_ab_dimensions_test.json
 5b01692bd393a2141fa137d624d379b1ed9377eb assets\rebuildableworldmod\models\block\useless_deepslate_ore.json
 f672405b7da976bd02782530ac6460ea1c5eb087 assets\rebuildableworldmod\blockstates\useless_nether_ore.json
