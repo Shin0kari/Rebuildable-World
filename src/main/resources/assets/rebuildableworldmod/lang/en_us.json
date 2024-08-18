@@ -1,7 +1,7 @@
 {
     "item.rebuildableworldmod.recreationclock": "Recreation Clock",
     "item.rebuildableworldmod.transportingclock": "Clock of Dimension Travel",
-    "tooltip.rebuildable_world_mod.transporting_clock.tooltip": "It feels like space is leaking through this gold watch",
+    "tooltip.rebuildableworldmod.transportingclock.tooltip": "It feels like space is leaking through this gold watch",
 
     "block.rebuildableworldmod.portal_block_to_ab_dimensions_test": "(Test)Portal Block of Dimensions AB",
 
@@ -15,5 +15,5 @@
     "sounds.rebuildableworldmod.villager_talk_mod": "villager_talk_mod",
 
     "block.rebuildableworldmod.clock_charge_station": "Clock charge Station",
-    "tooltip.rebuildable_world_mod.clock_charge_station.tooltip": "It seems that this station can infuse time into an object"
+    "tooltip.rebuildableworldmod.clock_charge_station.tooltip": "It seems that this station can infuse time into an object"
 }

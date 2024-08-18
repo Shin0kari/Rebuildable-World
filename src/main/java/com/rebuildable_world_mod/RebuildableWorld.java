@@ -9,7 +9,7 @@ import com.rebuildable_world_mod.block.ModBlocks;
 import com.rebuildable_world_mod.block.entity.ModBlockEntities;
 import com.rebuildable_world_mod.item.ModItemGroups;
 import com.rebuildable_world_mod.item.ModItems;
-// import com.rebuildable_world_mod.recipe.ModRecipes;
+import com.rebuildable_world_mod.recipe.ModRecipes;
 import com.rebuildable_world_mod.screen.ModScreenHandlers;
 import com.rebuildable_world_mod.sound.ModSounds;
 import com.rebuildable_world_mod.world.gen.ModWorldGeneration;
@@ -32,6 +32,6 @@ public class RebuildableWorld implements ModInitializer {
 	
 		ModScreenHandlers.registerScreenHandlers();
 
-		// ModRecipes.registerRecipes();
+		ModRecipes.registerRecipes();
 	}
 }

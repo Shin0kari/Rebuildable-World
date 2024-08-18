@@ -4,8 +4,9 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.Optional;
 
+import com.rebuildable_world_mod.RebuildableWorld;
 import com.rebuildable_world_mod.item.ModItems;
-// import com.rebuildable_world_mod.recipe.ClockChargeRecipe;
+import com.rebuildable_world_mod.recipe.ClockChargeRecipe;
 import com.rebuildable_world_mod.screen.ClockChargeScreenHandler;
 
 import net.fabricmc.fabric.api.screenhandler.v1.ExtendedScreenHandlerFactory;
@@ -144,28 +145,28 @@ public class ClockChargeStationBlockEntity extends BlockEntity implements Extend
         }
     }
 
-    // private boolean hasRecipe() {
-    //     Optional<RecipeEntry<ClockChargeRecipe>> recipe = getCurrentRecipe();
-
-    //     return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().value().getResult(null))
-    //             && canInsertItemIntoOutputSlot(recipe.get().value().getResult(null).getItem());
-    // }
-
     private boolean hasRecipe() {
-        ItemStack result = new ItemStack(ModItems.TRANSPORTINGCLOCK);
-        boolean hasInput = getStack(INPUT_SLOT).getItem() == ModItems.TRANSPORTINGCLOCK && getStack(INPUT_SLOT).getDamage() < getStack(INPUT_SLOT).getMaxDamage();
+        Optional<RecipeEntry<ClockChargeRecipe>> recipe = getCurrentRecipe();
 
-        return hasInput && canInsertAmountIntoOutputSlot(result) && canInsertItemIntoOutputSlot(result.getItem());
+        return recipe.isPresent() && canInsertAmountIntoOutputSlot(recipe.get().value().getResult(null))
+            && canInsertItemIntoOutputSlot(recipe.get().value().getResult(null).getItem());
     }
 
-    // private Optional<RecipeEntry<ClockChargeRecipe>> getCurrentRecipe() {
-    //     SimpleInventory inv = new SimpleInventory(this.size());
-    //     for(int i = 0; i < this.size(); i++) {
-    //         inv.setStack(i, this.getStack(i));
-    //     }
+    // private boolean hasRecipe() {
+    //     ItemStack result = new ItemStack(ModItems.TRANSPORTINGCLOCK);
+    //     boolean hasInput = getStack(INPUT_SLOT).getItem() == ModItems.TRANSPORTINGCLOCK && getStack(INPUT_SLOT).getDamage() < getStack(INPUT_SLOT).getMaxDamage();
 
-    //     return getWorld().getRecipeManager().getFirstMatch(ClockChargeRecipe.Type.INSTANCE, inv, getWorld());
+    //     return hasInput && canInsertAmountIntoOutputSlot(result) && canInsertItemIntoOutputSlot(result.getItem());
     // }
+
+    private Optional<RecipeEntry<ClockChargeRecipe>> getCurrentRecipe() {
+        SimpleInventory inv = new SimpleInventory(this.size());
+        for(int i = 0; i < this.size(); i++) {
+            inv.setStack(i, this.getStack(i));
+        }
+
+        return getWorld().getRecipeManager().getFirstMatch(ClockChargeRecipe.Type.INSTANCE, inv, getWorld());
+    }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {
         return this.getStack(OUTPUT_SLOT).getItem() == item || this.getStack(OUTPUT_SLOT).isEmpty();
@@ -184,21 +185,21 @@ public class ClockChargeStationBlockEntity extends BlockEntity implements Extend
         return progress >= maxProgress;
     }
 
-    private void craftItem() {
-        this.removeStack(INPUT_SLOT, 1);
-        ItemStack result = new ItemStack(ModItems.TRANSPORTINGCLOCK);
-
-        this.setStack(OUTPUT_SLOT, new ItemStack(result.getItem(), getStack(OUTPUT_SLOT).getCount() + result.getCount()));
-    }
-
     // private void craftItem() {
-    //     Optional<RecipeEntry<ClockChargeRecipe>> recipe = getCurrentRecipe();
-
     //     this.removeStack(INPUT_SLOT, 1);
+    //     ItemStack result = new ItemStack(ModItems.TRANSPORTINGCLOCK);
 
-    //     this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().value().getResult(null).getItem(),
-    //             getStack(OUTPUT_SLOT).getCount() + recipe.get().value().getResult(null).getCount()));
+    //     this.setStack(OUTPUT_SLOT, new ItemStack(result.getItem(), getStack(OUTPUT_SLOT).getCount() + result.getCount()));
     // }
+
+    private void craftItem() {
+        Optional<RecipeEntry<ClockChargeRecipe>> recipe = getCurrentRecipe();
+
+        this.removeStack(INPUT_SLOT, 1);
+
+        this.setStack(OUTPUT_SLOT, new ItemStack(recipe.get().value().getResult(null).getItem(),
+            getStack(OUTPUT_SLOT).getCount() + recipe.get().value().getResult(null).getCount()));
+    }
 
     private void resetProgress() {
         this.progress = 0;

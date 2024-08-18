@@ -114,7 +114,7 @@ public class TransportingClockItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.translatable("tooltip.rebuildable_world_mod.transporting_clock.tooltip").formatted(Formatting.AQUA));
+        tooltip.add(Text.translatable("tooltip.rebuildableworldmod.transportingclock.tooltip").formatted(Formatting.DARK_AQUA));
         super.appendTooltip(stack, world, tooltip, context);
     }
 

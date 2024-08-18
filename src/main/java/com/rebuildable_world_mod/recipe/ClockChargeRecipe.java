@@ -1,115 +1,123 @@
-// package com.rebuildable_world_mod.recipe;
+package com.rebuildable_world_mod.recipe;
 
-// import com.mojang.serialization.Codec;
-// import com.mojang.serialization.DataResult;
-// import com.mojang.serialization.codecs.RecordCodecBuilder;
-// import net.minecraft.inventory.SimpleInventory;
-// import net.minecraft.item.ItemStack;
-// import net.minecraft.network.PacketByteBuf;
-// import net.minecraft.recipe.*;
-// import net.minecraft.registry.DynamicRegistryManager;
-// import net.minecraft.util.collection.DefaultedList;
-// import net.minecraft.util.dynamic.Codecs;
-// import net.minecraft.world.World;
+import com.mojang.serialization.Codec;
+import com.mojang.serialization.DataResult;
+import com.mojang.serialization.codecs.RecordCodecBuilder;
+import com.rebuildable_world_mod.RebuildableWorld;
+import com.rebuildable_world_mod.item.ModItems;
 
-// import java.util.List;
+import net.minecraft.inventory.SimpleInventory;
+import net.minecraft.item.ItemStack;
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.recipe.*;
+import net.minecraft.registry.DynamicRegistryManager;
+import net.minecraft.util.collection.DefaultedList;
+import net.minecraft.util.dynamic.Codecs;
+import net.minecraft.world.World;
 
-// public class ClockChargeRecipe implements Recipe<SimpleInventory> {
-//     private final ItemStack output;
-//     private final List<Ingredient> recipeItems;
+import java.util.List;
 
-//     public ClockChargeRecipe(List<Ingredient> ingredients, ItemStack itemStack) {
-//         this.output = itemStack;
-//         this.recipeItems = ingredients;
-//     }
+public class ClockChargeRecipe implements Recipe<SimpleInventory> {
+    private final ItemStack output;
+    private final List<Ingredient> recipeItems;
 
-//     @Override
-//     public boolean matches(SimpleInventory inventory, World world) {
-//         if(world.isClient()) {
-//             return false;
-//         }
+    public ClockChargeRecipe(List<Ingredient> ingredients, ItemStack itemStack) {
+        this.output = itemStack;
+        this.recipeItems = ingredients;
+    }
 
-//         return recipeItems.get(0).test(inventory.getStack(0));
-//     }
+    @Override
+    public boolean matches(SimpleInventory inventory, World world) {
+        if(world.isClient()) {
+            return false;
+        }
 
-//     @Override
-//     public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
-//         return output;
-//     }
+        if (inventory.getStack(0).getItem() == ModItems.TRANSPORTINGCLOCK) {
+            return ((recipeItems.get(0).test(inventory.getStack(0))) && ((inventory.getStack(0).getMaxDamage() - inventory.getStack(0).getDamage()) < (inventory.getStack(0).getMaxDamage())));
+        }
 
-//     @Override
-//     public boolean fits(int width, int height) {
-//         return true;
-//     }
+        return recipeItems.get(0).test(inventory.getStack(0));
+    }
 
-//     @Override
-//     public ItemStack getResult(DynamicRegistryManager registryManager) {
-//         return output;
-//     }
+    @Override
+    public ItemStack craft(SimpleInventory inventory, DynamicRegistryManager registryManager) {
+        return output;
+    }
 
-//     @Override
-//     public DefaultedList<Ingredient> getIngredients() {
-//         DefaultedList<Ingredient> list = DefaultedList.ofSize(this.recipeItems.size());
-//         list.addAll(recipeItems);
-//         return list;
-//     }
+    @Override
+    public boolean fits(int width, int height) {
+        return true;
+    }
 
-//     @Override
-//     public RecipeSerializer<?> getSerializer() {
-//         return Serializer.INSTANCE;
-//     }
+    @Override
+    public ItemStack getResult(DynamicRegistryManager registryManager) {
+        return output;
+    }
 
-//     @Override
-//     public RecipeType<?> getType() {
-//         return Type.INSTANCE;
-//     }
+    @Override
+    public DefaultedList<Ingredient> getIngredients() {
+        DefaultedList<Ingredient> list = DefaultedList.ofSize(this.recipeItems.size());
+        list.addAll(recipeItems);
 
-//     public static class Type implements RecipeType<ClockChargeRecipe> {
-//         public static final Type INSTANCE = new Type();
-//         public static final String ID = "clock_charge";
-//     }
+        return list;
+    }
 
-//     public static class Serializer implements RecipeSerializer<ClockChargeRecipe> {
-//         public static final Serializer INSTANCE = new Serializer();
-//         public static final String ID = "clock_charge";
+    @Override
+    public RecipeSerializer<?> getSerializer() {
+        return Serializer.INSTANCE;
+    }
 
-//         public static final Codec<ClockChargeRecipe> CODEC = RecordCodecBuilder.create(in -> in.group(
-//                 validateAmount(Ingredient.DISALLOW_EMPTY_CODEC, 9).fieldOf("ingredients").forGetter(ClockChargeRecipe::getIngredients),
-//                 ItemStack.RECIPE_RESULT_CODEC.fieldOf("output").forGetter(r -> r.output)
-//         ).apply(in, ClockChargeRecipe::new));
+    @Override
+    public RecipeType<?> getType() {
+        return Type.INSTANCE;
+    }
 
-//         private static Codec<List<Ingredient>> validateAmount(Codec<Ingredient> delegate, int max) {
-//             return Codecs.validate(Codecs.validate(
-//                     delegate.listOf(), list -> list.size() > max ? DataResult.error(() -> "Recipe has too many ingredients!") : DataResult.success(list)
-//             ), list -> list.isEmpty() ? DataResult.error(() -> "Recipe has no ingredients!") : DataResult.success(list));
-//         }
+    public static class Type implements RecipeType<ClockChargeRecipe> {
+        public static final Type INSTANCE = new Type();
+        public static final String ID = "clock_charge";
+    }
 
-//         @Override
-//         public Codec<ClockChargeRecipe> codec() {
-//             return CODEC;
-//         }
+    public static class Serializer implements RecipeSerializer<ClockChargeRecipe> {
+        public static final Serializer INSTANCE = new Serializer();
+        public static final String ID = "clock_charge";
 
-//         @Override
-//         public ClockChargeRecipe read(PacketByteBuf buf) {
-//             DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
+        public static final Codec<ClockChargeRecipe> CODEC = RecordCodecBuilder.create(in -> in.group(
+                validateAmount(Ingredient.DISALLOW_EMPTY_CODEC, 9).fieldOf("ingredients").forGetter(ClockChargeRecipe::getIngredients),
+                RecipeCodecs.CRAFTING_RESULT.fieldOf("output").forGetter(r -> r.output)
+        ).apply(in, ClockChargeRecipe::new));
 
-//             for(int i = 0; i < inputs.size(); i++) {
-//                 inputs.set(i, Ingredient.fromPacket(buf));
-//             }
+        private static Codec<List<Ingredient>> validateAmount(Codec<Ingredient> delegate, int max) {
+            return Codecs.validate(Codecs.validate(
+                    delegate.listOf(), list -> list.size() > max ? DataResult.error(() -> "Recipe has too many ingredients!") : DataResult.success(list)
+            ), list -> list.isEmpty() ? DataResult.error(() -> "Recipe has no ingredients!") : DataResult.success(list));
+        }
 
-//             ItemStack output = buf.readItemStack();
-//             return new ClockChargeRecipe(inputs, output);
-//         }
+        @Override
+        public Codec<ClockChargeRecipe> codec() {
+            return CODEC;
+        }
 
-//         @Override
-//         public void write(PacketByteBuf buf, ClockChargeRecipe recipe) {
-//             buf.writeInt(recipe.getIngredients().size());
+        @Override
+        public ClockChargeRecipe read(PacketByteBuf buf) {
+            DefaultedList<Ingredient> inputs = DefaultedList.ofSize(buf.readInt(), Ingredient.EMPTY);
 
-//             for (Ingredient ingredient : recipe.getIngredients()) {
-//                 ingredient.write(buf);
-//             }
+            for(int i = 0; i < inputs.size(); i++) {
+                inputs.set(i, Ingredient.fromPacket(buf));
+            }
 
-//             buf.writeItemStack(recipe.getResult(null));
-//         }
-//     }
-// }
+            ItemStack output = buf.readItemStack();
+            return new ClockChargeRecipe(inputs, output);
+        }
+
+        @Override
+        public void write(PacketByteBuf buf, ClockChargeRecipe recipe) {
+            buf.writeInt(recipe.getIngredients().size());
+
+            for (Ingredient ingredient : recipe.getIngredients()) {
+                ingredient.write(buf);
+            }
+
+            buf.writeItemStack(recipe.getResult(null));
+        }
+    }
+}

@@ -2,7 +2,8 @@ package com.rebuildable_world_mod.block.custom;
 
 import org.jetbrains.annotations.Nullable;
 
-import com.mojang.serialization.MapCodec;
+import java.util.List;
+
 import com.rebuildable_world_mod.block.entity.ClockChargeStationBlockEntity;
 import com.rebuildable_world_mod.block.entity.ModBlockEntities;
 
@@ -15,9 +16,13 @@ import net.minecraft.block.ShapeContext;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.screen.NamedScreenHandlerFactory;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.hit.BlockHitResult;
@@ -35,11 +40,6 @@ public class ClockChargeStationBlock extends BlockWithEntity implements BlockEnt
     public ClockChargeStationBlock(Settings settings) {
         super(settings);
     }
-    
-    // @Override
-    // protected MapCodec<? extends BlockWithEntity> getCodec() {
-    //     return CODEC;
-    // }
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext ctx) {
@@ -102,5 +102,11 @@ public class ClockChargeStationBlock extends BlockWithEntity implements BlockEnt
             BlockEntityType<T> type) {
         return validateTicker(type, ModBlockEntities.CLOCK_CHARGE_STATION_BLOCK_ENTITY,
                 (world1, pos, state1, blockEntity) -> blockEntity.tick(world1, pos, state1));
+    }
+
+    @Override
+    public void appendTooltip(ItemStack stack, BlockView world, List<Text> tooltip, TooltipContext context) {
+        tooltip.add(Text.translatable("tooltip.rebuildableworldmod.clock_charge_station.tooltip").formatted(Formatting.AQUA));
+        super.appendTooltip(stack, world, tooltip, context);
     }
 }

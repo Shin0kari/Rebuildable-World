@@ -1,0 +1,12 @@
+{
+  "type": "rebuildableworldmod:clock_charge",
+  "ingredients": [
+    {
+      "item": "rebuildableworldmod:transportingclock"
+    }
+  ],
+  "output": {
+    "item": "rebuildableworldmod:transportingclock",
+    "count": 1
+  }
+}
