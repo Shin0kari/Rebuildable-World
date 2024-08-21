@@ -1,7 +1,8 @@
-// 1.20.2	2024-08-18T02:16:28.4362838	Rebuildable World/World Generator
+// 1.20.2	2024-08-21T17:06:11.4434316	Rebuildable World/World Generator
 f206c47e75039b253076b7f1af09dc6773504c08 data\rebuildableworldmod\worldgen\placed_feature\useless_nether_ore_placed.json
-0eb31659f60428fc0401021aad7830cb8ddfeb92 data\rebuildableworldmod\worldgen\configured_feature\useless_ore.json
+e74456051f436a1108f8033602d6a2946b7102e3 data\rebuildableworldmod\worldgen\biome\fireproof_biome.json
 d535f1844e44a77ff164b01495cc5c49b8eb1861 data\rebuildableworldmod\worldgen\configured_feature\useless_nether_ore.json
+0eb31659f60428fc0401021aad7830cb8ddfeb92 data\rebuildableworldmod\worldgen\configured_feature\useless_ore.json
 dcfba9f9a982da6e2db975d0386b599fdfa4c4e1 data\rebuildableworldmod\worldgen\configured_feature\useless_end_ore.json
 3dc55836d79c3fc317f848fbe14f5eb92c4563c7 data\rebuildableworldmod\worldgen\placed_feature\useless_ore_placed.json
 66c0b9e4942e8083e7fff97b385e4b642923146c data\rebuildableworldmod\worldgen\placed_feature\useless_end_ore_placed.json

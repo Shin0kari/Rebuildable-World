@@ -5,7 +5,7 @@
 	"name": "Rebuildable World",
 	"description": "Recreating the measurement every T time",
 	"authors": [
-		"GWS"
+		"Shinokari"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -16,16 +16,19 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.rebuildable_world_mod.RebuildableWorld"
+			"com.rebuildableworldmod.RebuildableWorld"
 		],
 		"client": [
-			"com.rebuildable_world_mod.RebuildableWorldClient"
+			"com.rebuildableworldmod.RebuildableWorldClient"
 		],
 		"fabric-datagen": [
-			"com.rebuildable_world_mod.RebuildableWorldDataGenerator"
+			"com.rebuildableworldmod.RebuildableWorldDataGenerator"
 		],
 		"rei-client": [
-			"com.rebuildable_world_mod.compat.RebuildableModREIClientPlugin"
+			"com.rebuildableworldmod.compat.RebuildableWorldModREIClientPlugin"
+		],
+		"terrablender": [
+			"com.rebuildableworldmod.world.biome.ModTerrablenderAPI"
 		]
 	},
 	"mixins": [

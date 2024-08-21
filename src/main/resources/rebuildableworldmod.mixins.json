@@ -1,6 +1,6 @@
 {
 	"required": true,
-	"package": "com.rebuildable_world_mod.mixin",
+	"package": "com.rebuildableworldmod.mixin",
 	"compatibilityLevel": "JAVA_17",
 	"mixins": [
 		"ExampleMixin"
